@@ -15,4 +15,15 @@ class LocalRepositoryMhs (
         return mahasiswaDao.getAllMahasiswa()
     }
 
+    override fun getMhs(nim: String): Flow<Mahasiswa> {  //mengambil data mahasiswa berdasarkan nim
+        return mahasiswaDao.getMahasiswa(nim)
+    }
+
+    override suspend fun deleteMhs(mahasiswa: Mahasiswa) { //menghapus data mahasiswa
+        mahasiswaDao.deleteMahasiswa(mahasiswa)
+    }
+
+    override suspend fun updateMhs(mahasiswa: Mahasiswa) { //memperbarui data mahasiswa dalam database
+        mahasiswaDao.updateMahasiswa(mahasiswa)
+    }
 }
