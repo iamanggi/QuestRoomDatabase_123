@@ -28,7 +28,7 @@ Data Kosong
 
 Pesan kesalahan muncul saat tombol "Simpan" pada halaman tambah data
 
-![Screenshot 2024-12-12 095713](https://github.com/user-attachments/assets/c280bd40-63c4-4004-8515-782df3f3e32d)
+![image](https://github.com/user-attachments/assets/35a5da41-891e-401e-95fa-4af0c95a5b45)
 
 Pesan kesalahan muncul saat tombol "Simpan" pada halaman edit data
 
