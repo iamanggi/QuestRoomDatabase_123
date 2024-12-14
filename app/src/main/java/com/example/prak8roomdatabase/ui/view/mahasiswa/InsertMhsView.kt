@@ -3,9 +3,7 @@ package com.example.prak8roomdatabase.ui.view.mahasiswa
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -27,7 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.prak8roomdatabase.ui.customwidget.TopAppBar
-import com.example.prak8roomdatabase.ui.navigation.AlamatNavigasi
 import com.example.prak8roomdatabase.ui.viewmodel.FormErrorState
 import com.example.prak8roomdatabase.ui.viewmodel.MahasiswaEvent
 import com.example.prak8roomdatabase.ui.viewmodel.MahasiswaViewModel
@@ -35,9 +32,6 @@ import com.example.prak8roomdatabase.ui.viewmodel.MhsUIState
 import com.example.prak8roomdatabase.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
 
-object DestinasiInsert : AlamatNavigasi{   //object akan menjadi nama halaman/ menjadi pengenal halaman
-    override val route: String = "insert_mhs"
-}
 
 @Composable
 fun InsertMhsView(
@@ -68,14 +62,13 @@ fun InsertMhsView(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(padding)
-                .padding(16.dp)
+                .padding(horizontal = 16.dp),
         ) {
            TopAppBar(
                onBack = onBack,
                showBackButton = true,
-               judul = "Tambah Mahasiswa"
+               judul = "Tambah Mahasiswa",
            )
-
             //isi body
             InsertBodyMhs(
                 uiState = uiState,
@@ -89,7 +82,6 @@ fun InsertMhsView(
             )
         }
     }
-
 }
 
 @Composable
@@ -100,7 +92,7 @@ fun InsertBodyMhs(
     onClick:() -> Unit
 ){
     Column (
-        modifier =modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
         )
@@ -128,10 +120,10 @@ fun FormMahasiswa(
     errorState: FormErrorState = FormErrorState(),
     modifier: Modifier = Modifier
 ) {
-    val jenisKelamin = listOf("Laki=laki", "Perempuan")
+    val jenisKelamin = listOf("Laki - laki", "Perempuan")
     val kelas = listOf("A", "B", "C", "D", "E")
 
-    Column(modifier = modifier.fillMaxWidth())
+    Column(modifier = modifier.fillMaxWidth().padding(top = 20.dp))
     {
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
@@ -165,7 +157,6 @@ fun FormMahasiswa(
             color = Color.Red
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
         Text(text = "Jenis Kelamin")
         Row(modifier = Modifier.fillMaxWidth())
         {
@@ -189,7 +180,6 @@ fun FormMahasiswa(
             text = errorState.jenisKelamin ?: "",
             color = Color.Red
         )
-        Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = mahasiswaEvent.alamat,
@@ -206,7 +196,6 @@ fun FormMahasiswa(
             color = Color.Red
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
         Text(text = "Kelas")
         Row(modifier = Modifier.fillMaxWidth())
         {
@@ -231,7 +220,6 @@ fun FormMahasiswa(
             color = Color.Red
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = mahasiswaEvent.angkatan,

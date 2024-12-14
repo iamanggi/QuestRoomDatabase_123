@@ -1,6 +1,5 @@
 package com.example.prak8roomdatabase.ui.viewmodel
 
-import androidx.compose.runtime.internal.isLiveLiteralsEnabled
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

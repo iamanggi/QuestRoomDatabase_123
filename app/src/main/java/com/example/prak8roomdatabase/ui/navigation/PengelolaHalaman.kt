@@ -8,7 +8,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.prak8roomdatabase.ui.view.mahasiswa.DestinasiInsert
 import com.example.prak8roomdatabase.ui.view.mahasiswa.DetailMhsView
 import com.example.prak8roomdatabase.ui.view.mahasiswa.HomeMhsView
 import com.example.prak8roomdatabase.ui.view.mahasiswa.InsertMhsView

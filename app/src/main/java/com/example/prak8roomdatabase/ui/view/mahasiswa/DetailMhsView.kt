@@ -51,7 +51,7 @@ fun DetailMhsView(
         TopAppBar(
             judul = "Detail Mahasiswa",
             showBackButton = true,
-            onBack = onBack,
+            onBack = onBack
         )
     },
         floatingActionButton = {
@@ -109,7 +109,7 @@ fun BodyDetailMhs(
                     deleteConfirmationRequired = true
                 }, modifier = Modifier.fillMaxWidth())
                 {
-                    Text(text = "Delete")
+                    Text(text = "Delete", fontSize = 18.sp)
                 }
 
                 if (deleteConfirmationRequired) {
@@ -146,7 +146,7 @@ fun ItemDetailMhs(
     mahasiswa: Mahasiswa
 ){
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().padding(top = 20.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
             contentColor = MaterialTheme.colorScheme.onPrimaryContainer
@@ -155,15 +155,15 @@ fun ItemDetailMhs(
         Column(modifier = Modifier.padding(16.dp)
         ) {
             ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nim)
-            Spacer(modifier =Modifier.padding(4.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Nama", isinya = mahasiswa.nama)
-            Spacer(modifier =Modifier.padding(4.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat)
-            Spacer(modifier =Modifier.padding(4.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin)
-            Spacer(modifier =Modifier.padding(4.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas)
-            Spacer(modifier =Modifier.padding(4.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Angkatan", isinya = mahasiswa.angkatan)
 
         }
@@ -212,5 +212,6 @@ private fun DeleteConfirmationDialog(
             TextButton(onClick = onDeleteConfirm) {
                 Text(text = "Yes")
             }
-        })
+        }
+    )
 }
