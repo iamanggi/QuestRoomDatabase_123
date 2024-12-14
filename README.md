@@ -25,3 +25,13 @@ Data setelah di hapus
 Data Kosong
 
 ![Screenshot 2024-12-15 002515](https://github.com/user-attachments/assets/843f5a56-b84d-41f0-9a8d-72cf1c36e7c5)
+
+Pesan kesalahan muncul saat tombol "Simpan" pada halaman tambah data
+
+![Screenshot 2024-12-12 095713](https://github.com/user-attachments/assets/c280bd40-63c4-4004-8515-782df3f3e32d)
+
+Pesan kesalahan muncul saat tombol "Simpan" pada halaman edit data
+
+![image](https://github.com/user-attachments/assets/39d2c20c-92c7-4b51-b7d5-273c56438e0c)
+
+
