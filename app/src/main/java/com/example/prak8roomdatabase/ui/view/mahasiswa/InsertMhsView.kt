@@ -229,7 +229,7 @@ fun FormMahasiswa(
             label = { Text("Angkatan") },
             isError = errorState.angkatan != null,
             placeholder = { Text("Masukkan Angkatan") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
         Text(
             text = errorState.angkatan ?: "",
