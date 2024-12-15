@@ -45,7 +45,7 @@ fun DetailMhsView(
     viewModel: DetailMhsViewModel = viewModel(factory = PenyediaViewModel.Factory),
     onBack: () -> Unit = { },
     onEditClick: (String) -> Unit ={ },
-    onDeleteClick: () -> Unit)
+    onDeleteClick: () -> Unit ={ } )
 {
     Scaffold (topBar = {
         TopAppBar(
@@ -56,7 +56,7 @@ fun DetailMhsView(
     },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = {onEditClick(viewModel.detailUiEvent.value.detailUiEvent.nim)},
+                onClick = {onEditClick(viewModel.detailUiState.value.detailUiEvent.nim)},
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(16.dp)
             ) {
@@ -66,7 +66,7 @@ fun DetailMhsView(
             }
         }){
             innerPadding ->
-        val detailUiState by viewModel.detailUiEvent.collectAsState()
+        val detailUiState by viewModel.detailUiState.collectAsState()
 
         BodyDetailMhs(
             modifier = Modifier.padding(innerPadding),
